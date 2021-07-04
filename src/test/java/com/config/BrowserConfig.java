@@ -33,7 +33,7 @@ public class BrowserConfig {
         System.setProperty("webdriver.gecko.driver","./src/main/resources/geckodriver.exe");
 
         driver = new FirefoxDriver();
-        driver.get("https://facebook.com");
+        driver.get("https://google.com");
     }
 
     public static void chromeClose()
