@@ -21,6 +21,8 @@ public class Login extends BrowserConfig {
         //Step-3: Set the Input for Email
         Email.sendKeys("user101@gmail.com");
 
+        //getElementByIDandType("input-email","user101@gmail.com");
+
         //Step-4: Find the web-element
         WebElement Password = driver.findElement(By.id("input-password"));
         //Step-5: Set the Input for Password
@@ -31,8 +33,22 @@ public class Login extends BrowserConfig {
         LoginBtn.click();
 
         //Logout
-        WebElement Logout = driver.findElement(By.linkText("Logout"));
-        Logout.click();
+        /*WebElement Logout = driver.findElement(By.linkText("Logout"));
+        Logout.click();*/
+
+        String Expected_Title = "My Account";
+        String Actual_Title = driver.getTitle();
+
+        if(Expected_Title.equals(Actual_Title))
+        {
+            System.out.println("Test Passed for Valid Data");
+            WebElement Logout = driver.findElement(By.linkText("Logout"));
+            Logout.click();
+        }
+        else
+        {
+            System.out.println("Test Failed for Valid Data");
+        }
 
 
     }
@@ -54,6 +70,21 @@ public class Login extends BrowserConfig {
         //Step-6: Login
         WebElement LoginBtn = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[2]/div/form/input"));
         LoginBtn.click();
+
+        String Expected_Title = "My Account";
+        String Actual_Title = driver.getTitle();
+
+        if(!Expected_Title.equals(Actual_Title))
+        {
+            System.out.println("Test Passed for Invalid Data");
+        }
+        else
+        {
+            System.out.println("Test Failed for Invalid Data");
+            WebElement Logout = driver.findElement(By.linkText("Logout"));
+            Logout.click();
+        }
+
 
     }
 }

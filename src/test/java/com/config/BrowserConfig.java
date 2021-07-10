@@ -1,6 +1,8 @@
 package com.config;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -46,5 +48,26 @@ public class BrowserConfig {
     {
         driver.close(); //close the active Tab
         //driver.quit(); //close the browser
+    }
+
+    public static void openTestURL(String URL){
+        driver.get(URL);
+    }
+
+    public static WebElement elementByCSS(String locator)
+    {
+        return driver.findElement(By.cssSelector(locator));
+
+    }
+
+    public static void getelementByCSSandselect(String locator)
+    {
+        driver.findElement(By.cssSelector(locator)).click();
+
+    }
+
+    public static void getElementByIDandType(String locator, String text)
+    {
+        driver.findElement(By.id(locator)).sendKeys(text);
     }
 }
