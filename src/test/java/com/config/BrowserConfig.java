@@ -50,7 +50,8 @@ public class BrowserConfig {
         //driver.quit(); //close the browser
     }
 
-    public static void openTestURL(String URL){
+    public static void openTestURL(String URL)
+    {
         driver.get(URL);
     }
 
@@ -66,8 +67,18 @@ public class BrowserConfig {
 
     }
 
-    public static void getElementByIDandType(String locator, String text)
+    public static void getElementByIDandType(String locator, String field)
     {
-        driver.findElement(By.id(locator)).sendKeys(text);
+        driver.findElement(By.id(locator)).sendKeys(field);
+    }
+
+    public static void alertAccept()
+    {
+        driver.switchTo().alert().accept();
+    }
+
+    public static void alertCancel()
+    {
+        driver.switchTo().alert().dismiss();
     }
 }

@@ -9,6 +9,8 @@ public class AllaboutAlerts extends BrowserConfig {
         firefoxLaunch();
         openTestURL("https://the-internet.herokuapp.com/javascript_alerts");
         normalAlert();
+        confirmAlert();
+        prompAlert();
     }
 
     public static void normalAlert()
@@ -19,18 +21,22 @@ public class AllaboutAlerts extends BrowserConfig {
 
         getelementByCSSandselect(".example > ul:nth-child(3) > li:nth-child(1) > button:nth-child(1)");
 
-        driver.switchTo().alert().accept();
-
+        //driver.switchTo().alert().accept();
+        alertAccept();
 
     }
 
     public static void confirmAlert()
     {
+        getelementByCSSandselect(".example > ul:nth-child(3) > li:nth-child(2) > button:nth-child(1)");
+        alertCancel();
 
     }
 
     public static void prompAlert()
     {
-
+        getelementByCSSandselect(".example > ul:nth-child(3) > li:nth-child(3) > button:nth-child(1)");
+        driver.switchTo().alert().sendKeys("Testing");
+        alertAccept();
     }
 }
