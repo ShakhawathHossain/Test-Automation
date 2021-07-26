@@ -6,12 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.IOException;
+
 public class BrowserConfig {
 
     public static WebDriver driver;
     // Browser Launch
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
         chromeLaunch();
         //chromeClose();
         //firefoxLaunch();
