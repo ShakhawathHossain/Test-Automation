@@ -1,6 +1,6 @@
 # Test-Automation
 
-Modules: -> Login -> Register -> Account information -> Cart
+Modules: -> Login -> Register 
 
 What was used:
 
