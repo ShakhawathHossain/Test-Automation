@@ -2,7 +2,7 @@
 
 Modules: -> Login -> Register 
 
-What was used:
+Technology used:
 
 -> Java
 
